@@ -18,7 +18,7 @@ st.title('Hello World')
 def run_query(query,column_names):
     with conn.cursor() as cur:
         cur.execute(query)
-        tuples_list = cursor.fetchall()
+        tuples_list = cur.fetchall()
         df = pd.DataFrame(tuples_list, columns=column_names)
         return df
 
