@@ -1,5 +1,6 @@
 import streamlit as st
 import psycopg2
+import pandas as pd
 
 # Initialize connection.
 # Uses st.experimental_singleton to only run once.
@@ -14,13 +15,16 @@ st.title('Hello World')
 # Perform query.
 # Uses st.experimental_memo to only rerun when the query changes or after 10 min.
 @st.experimental_memo(ttl=600)
-def run_query(query):
+def run_query(query,column_names):
     with conn.cursor() as cur:
         cur.execute(query)
-        return cur.fetchall()
+        tuples_list = cursor.fetchall()
+        df = pd.DataFrame(tuples_list, columns=column_names)
+        return df
 
-rows = run_query("SELECT * from fruit_list;")
+column_names = ["ID","Fruit","Quantity","Price"]    
+
+rows = run_query("SELECT * from fruit_list;",column_names)
 
 # Print results.
-for row in rows:
-    st.write(f"{row}")
+df.head()
