@@ -58,7 +58,7 @@ if _funct == 'Display':
     
 if _funct == 'Highlight': 
     col_opt = st.selectbox(label='Select column',options = df.columns)
-    cellstyle_jscode = JsCode(
+    cellstyle_jscode = JsCode("""
         function(params)
         if (params.value == 'Alpha') {
             return {
@@ -69,5 +69,5 @@ if _funct == 'Highlight':
         
         
         
-    )
+    """)
     
