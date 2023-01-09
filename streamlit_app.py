@@ -71,3 +71,16 @@ if _funct == 'Highlight':
         
     """)
     
+    gb.configure_columns(col_opt, cellstyle=cell)
+    gridOptions = gb.build()
+    grid_table = AgGrid(df,
+                        gridOptions = gridOptions,
+                        enable_enterprise_modules = True,
+                        fit_columns_on_grid_load = True,
+                        height = 500,
+                        width = '100%',
+                        theme = "material",
+                        update_mode = GridUpdateMode.SELECTION_CHANGED,
+                        reload_data = True,
+                        allow_unsafe_jscode=True
+                        )
