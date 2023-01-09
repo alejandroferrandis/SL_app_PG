@@ -32,20 +32,26 @@ st.header("This is a Df")
 # Print results.
 st.dataframe(df)
 
+_funct = st.sidebar.radio(label="Functions", options = ['Display', Highlight'])
+
 st.header("This is AG Grid")
 
 gd = GridOptionsBuilder.from_dataframe(df)
 gd.configure_pagination(enabled=True)
 gd.configure_default_column(editable=True, groupable=True)
 
-sel_mode = st.radio('Selection Type', options = ['single', 'multiple'])
-gd.configure_selection(selection_mode=sel_mode, use_checkbox=True)
-gridoptions = gd.build()
-grid_table = AgGrid(df,
-                    gridOptions=gridoptions, 
-                    update_mode= GridUpdateMode.SELECTION_CHANGED, 
-                    height=500,
-                    allow_unsafe_json=True)
+if _funct == 'Display':    
+    sel_mode = st.radio('Selection Type', options = ['single', 'multiple'])
+    gd.configure_selection(selection_mode=sel_mode, use_checkbox=True)
+    gridoptions = gd.build()
+    grid_table = AgGrid(df,
+                        gridOptions=gridoptions, 
+                        update_mode= GridUpdateMode.SELECTION_CHANGED, 
+                        height=500,
+                        width=100%,
+                        allow_unsafe_jscode=True)
 
-sel_row = grid_table["selected_rows"]
-st.write(sel_row)
+    st.header('Output')
+
+    sel_row = grid_table["selected_rows"]
+    st.write(sel_row)
