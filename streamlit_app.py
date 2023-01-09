@@ -60,7 +60,7 @@ if _funct == 'Highlight':
     col_opt = st.selectbox(label='Select column',options = df.columns)
     cellstyle_jscode = JsCode("""
         function(params){
-        if (params.value == 'Alpha') {
+        if (params.value == 'apple') {
             return {
                 'color': 'black',
                 'backgroundColor': 'orange'
