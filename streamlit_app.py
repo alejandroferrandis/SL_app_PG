@@ -3,8 +3,8 @@ import psycopg2
 import pandas as pd
 import os
 import sys
-from st_aggrid import AgGrid, GridUpdateMode, JsCode
-from st_aggrig.grid_options_builder import GridOptionsBuilder
+#from st_aggrid import AgGrid, GridUpdateMode, JsCode
+#from st_aggrig.grid_options_builder import GridOptionsBuilder
 
 # Initialize connection.
 # Uses st.experimental_singleton to only run once.
