@@ -71,7 +71,7 @@ if _funct == 'Highlight':
         
     """)
     
-    gb.configure_columns(col_opt, cellStyle=cellstyle_jscode)
+    gd.configure_columns(col_opt, cellStyle=cellstyle_jscode)
     gridOptions = gb.build()
     grid_table = AgGrid(df,
                         gridOptions = gridOptions,
