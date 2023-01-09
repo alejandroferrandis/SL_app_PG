@@ -40,7 +40,7 @@ def sql_to_dataframe(conn, query, column_names):
    try:
       cursor.execute(query)
    except (Exception, psycopg2.DatabaseError) as error:
-      print(“Error: %s” % error)
+      print("Error: %s" % error)
    cursor.close()
    return 1
    # The execute returns a list of tuples:
