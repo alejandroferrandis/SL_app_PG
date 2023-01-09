@@ -1,7 +1,7 @@
 import streamlit as st
 import psycopg2
 import pandas as pd
-from st_aggrid import AgGrid, GridUpdateMode
+from st_aggrid import AgGrid, GridUpdateMode, JsCode
 from st_aggrid.grid_options_builder import GridOptionsBuilder
 
 # Initialize connection.
@@ -54,3 +54,20 @@ if _funct == 'Display':
 
     sel_row = grid_table["selected_rows"]
     st.write(sel_row)
+
+    
+if _funct == 'Highlight': 
+    col_opt = st.selectbox(label='Select column',options = df.columns)
+    cellstyle_jscode = JsCode(
+        function(params)
+        if (params.value == 'Alpha') {
+            return {
+                'color': 'black'
+                'backgroundColor': 'orange'
+            }
+        }
+        
+        
+        
+    )
+    
