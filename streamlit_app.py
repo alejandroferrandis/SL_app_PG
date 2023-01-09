@@ -47,7 +47,7 @@ if _funct == 'Display':
                         gridOptions=gridoptions, 
                         update_mode= GridUpdateMode.SELECTION_CHANGED, 
                         height=500,
-                        width=100%,
+                        width='100%',
                         allow_unsafe_jscode=True)
 
     st.header('Output')
