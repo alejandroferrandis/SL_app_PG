@@ -1,4 +1,4 @@
-import streamlit
+import streamlit as st
 import psycopg2
 
 # Initialize connection.
