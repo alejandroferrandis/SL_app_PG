@@ -19,7 +19,7 @@ def run_query(query,column_names):
     with conn.cursor() as cur:
         cur.execute(query)
         tuples_list = cur.fetchall()
-        df = pd.DataFrame(tuples_list, columns=column_names, index=False)
+        df = pd.DataFrame(tuples_list, columns=column_names)
         return df
 
 column_names = ["ID","Fruit","Quantity","Price"]    
