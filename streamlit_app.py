@@ -1,6 +1,7 @@
 import streamlit as st
 import psycopg2
 import pandas as pd
+from st_aggrid import AgGrid
 
 # Initialize connection.
 # Uses st.experimental_singleton to only run once.
@@ -28,3 +29,4 @@ df = run_query("SELECT * from fruit_list;",column_names)
 
 # Print results.
 st.dataframe(df)
+AgGrid(df)
