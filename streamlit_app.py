@@ -32,8 +32,7 @@ st.header("This is a Df")
 # Print results.
 st.dataframe(df)
 
-_funct = st.sidebar.radio(label="Functions", options = ['Display', Highlight'])
-
+_funct = st.sidebar.radio(label="Functions", options = ['Display', 'Highlight'])
 st.header("This is AG Grid")
 
 gd = GridOptionsBuilder.from_dataframe(df)
