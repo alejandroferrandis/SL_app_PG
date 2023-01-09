@@ -27,4 +27,4 @@ column_names = ["ID","Fruit","Quantity","Price"]
 df = run_query("SELECT * from fruit_list;",column_names)
 
 # Print results.
-df.head()
+st.dataframe(df)
