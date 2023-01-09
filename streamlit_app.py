@@ -13,12 +13,12 @@ def init_connection():
     # Connect to database #
     conn = None
     try:
-        print(‘Connecting…’)
+        print("Connecting…")
         conn1 = psycopg2.connect(**st.secrets["postgres"])
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)
         sys.exit(1)
-    print(“All good, Connection successful!”)
+    print("All good, Connection successful!")
     return conn1
 
 conn = init_connection()
