@@ -23,4 +23,4 @@ rows = run_query("SELECT * from fruit_list;")
 
 # Print results.
 for row in rows:
-    st.write(f"{row[0]}")
+    st.write(f"{row}")
