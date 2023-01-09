@@ -24,7 +24,7 @@ def run_query(query,column_names):
 
 column_names = ["ID","Fruit","Quantity","Price"]    
 
-rows = run_query("SELECT * from fruit_list;",column_names)
+df = run_query("SELECT * from fruit_list;",column_names)
 
 # Print results.
 df.head()
