@@ -1,7 +1,7 @@
 import streamlit as st
 import psycopg2
 import pandas as pd
-from st_aggrid import AgGrid
+from st_aggrid import AgGrid, GridUpdateMode
 from st_aggrid.grid_options_builder import GridOptionsBuilder
 
 # Initialize connection.
@@ -41,4 +41,11 @@ gd.configure_default_column(editable=True, groupable=True)
 sel_mode = st.radio('Selection Type', options = ['single', 'multiple'])
 gd.configure_selection(selection_mode=sel_mode, use_checkbox=True)
 gridoptions = gd.build()
-AgGrid(df,gridOptions=gridoptions)
+grid_table = AgGrid(df,
+                    gridOptions=gridoptions, 
+                    update_mode= GridUpdateMode.SELECTION_CHANGED, 
+                    height=500,
+                    allow_unsafe_json=True)
+
+sel_row = grid_table["selected_rows"]
+st.write(sel_row)
