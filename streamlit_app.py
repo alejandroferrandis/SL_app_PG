@@ -9,7 +9,7 @@ def init_connection():
 
 conn = init_connection()
 
-streamlit.title('Hello World')
+st.title('Hello World')
 
 # Perform query.
 # Uses st.experimental_memo to only rerun when the query changes or after 10 min.
