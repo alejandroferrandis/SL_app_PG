@@ -33,9 +33,9 @@ conn = init_connection()
 
 
 def sql_to_dataframe(conn, query, column_names):
-   “”” 
-   Import data from a PostgreSQL database using a SELECT query 
-   “””
+   # 
+   #Import data from a PostgreSQL database using a SELECT query 
+   #
    cursor = conn.cursor()
    try:
       cursor.execute(query)
@@ -61,7 +61,7 @@ st.title('Hello World')
 #    st.write(f"{row}")
 
 query = "SELECT * from fruit_list;"
-column_names = [‘ID’,‘Fruit_list’, ‘quantity’, ‘value’]
+column_names = ["ID","Fruit_list", "quantity", "value"]
 
 df = sql_to_dataframe(conn, query, column_names)
 
