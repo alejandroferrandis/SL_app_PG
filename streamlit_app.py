@@ -34,9 +34,9 @@ st.dataframe(df)
 
 st.header("This is AG Grid")
 
-gr = GridOptionsBuilder.from_dataframe(df)
+gd = GridOptionsBuilder.from_dataframe(df)
 gd.configure_pagination(enabled=True)
-gr.configure_default_column(editable=True, groupable=True)
+gd.configure_default_column(editable=True, groupable=True)
 
 sel_mode = st.radio('Selection Type', options = ['single', 'multiple'])
 gd.configure_selection(selection_mode=sel_mode, use_checkbox=True)
