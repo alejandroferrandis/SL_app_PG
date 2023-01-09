@@ -62,7 +62,7 @@ if _funct == 'Highlight':
         function(params){
         if (params.value == 'Alpha') {
             return {
-                'color': 'black'
+                'color': 'black',
                 'backgroundColor': 'orange'
         }
         }
