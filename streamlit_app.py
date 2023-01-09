@@ -64,7 +64,7 @@ if _funct == 'Highlight':
             return {
                 'color': 'black'
                 'backgroundColor': 'orange'
-            }
+        }
         }
         
         
